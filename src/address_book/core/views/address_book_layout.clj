@@ -30,9 +30,9 @@
       [:div.column-1
        [:input#name-input {:type "text" :name "name" :placeholder "Name"}]]
       [:div.column-2
-       [:input#phone-input {:type "text" :phone "phone" :placeholder "Phone"}]]
+       [:input#phone-input {:type "text" :name "phone" :placeholder "Phone"}]]
       [:div.column-3
-       [:input#email-input {:type "text" :email "email" :placeholder "Email"}]]
+       [:input#email-input {:type "text" :name "email" :placeholder "Email"}]]
       [:button.button.add {:type "submit"} "Add "]]
      [:div.clear-row]]))
 
