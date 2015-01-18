@@ -5,7 +5,8 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [compojure "1.3.1"]
                  [ring/ring-defaults "0.1.2"]
-                 [midje "1.6.3"]]
+                 [midje "1.6.3"]
+                 [hiccup "1.0.5"]]
   :plugins [[lein-ring "0.8.13"]
             [lein-midje "3.1.3"]]
   :ring {:handler address-book.core.handler/app
