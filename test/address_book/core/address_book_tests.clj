@@ -28,4 +28,36 @@
                                                 :phone "4" 
                                                 :email "d@x.com"}))]
                (:status response) => 302
-               (count (query/all-contacts)) => 1))))
+               (count (query/all-contacts)) => 1))
+
+       (fact "Test update"
+             (query/insert-contact<! {:name "_A"
+                                       :phone "0"
+                                       :email "a@x.com"})
+             (let [response (app (mock/request :post "/edit/1"
+                                               {:id "1"
+                                                :name "A"
+                                                :phone "1"
+                                                :email "a@x.com"}))]
+               (:status response) => 302
+               (count (query/all-contacts)) => 1
+               (first (query/all-contacts)) => {:id 1
+                                                :name "A"
+                                                :phone "1"
+                                                :email "a@x.com"}))
+
+       (fact "Test delete"
+             (query/insert-contact<! {:name "A"
+                                       :phone "1"
+                                       :email "a@x.com"})
+             (query/insert-contact<! {:name "B"
+                                       :phone "2"
+                                       :email "b@x.com"})
+             (count (query/all-contacts)) => 2
+             (let [response (app (mock/request :post "/delete/1"))]
+               (:status response) => 302
+               (count (query/all-contacts)) => 1
+               (first (query/all-contacts)) => {:id 2
+                                                :name "B"
+                                                :phone "2"
+                                                :email "b@x.com"}))))
