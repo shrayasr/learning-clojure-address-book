@@ -8,7 +8,8 @@
                  [midje "1.6.3"]]
   :plugins [[lein-ring "0.8.13"]
             [lein-midje "3.1.3"]]
-  :ring {:handler address-book.core.handler/app}
+  :ring {:handler address-book.core.handler/app
+         :init    address-book.core.handler/init }
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring-mock "0.1.5"]]}})
