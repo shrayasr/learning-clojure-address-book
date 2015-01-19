@@ -1,3 +1,4 @@
-# address-book
+# Learning Clojure by making an address book application
 
-Working with http://www.jarrodctaylor.com/posts/Compojure-Address-Book-Part-1/
+* Tutorial followed: http://www.jarrodctaylor.com/posts/Compojure-Address-Book-Part-1/
+* Blog post: www.shrayas.com/a-day-with-clojure.html
